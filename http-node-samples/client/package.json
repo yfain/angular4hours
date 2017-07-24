@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --app rest --proxy-config proxy-conf.json -o",
+    "client": "ng serve --app rest --proxy-config proxy-conf.json -o",
+    "client2": "ng serve --app rest2 --proxy-config proxy-conf.json -o",
+    "interceptor": "ng serve --app interceptor --proxy-config proxy-conf.json -o",
+
     "build": "ng build -prod --app rest ",
     "postbuild": "npm run deploy",
     "predeploy": "rimraf ../server/build/public && mkdirp ../server/build/public",

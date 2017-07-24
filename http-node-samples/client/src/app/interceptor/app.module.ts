@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FirstInterceptor} from "./first.interceptor.service";
 
 @NgModule({
   declarations: [
@@ -11,8 +11,9 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    HttpModule, FormsModule
+    HttpClientModule
   ],
+  providers: [[ { provide: HTTP_INTERCEPTORS, useClass: FirstInterceptor, multi: true } ]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
