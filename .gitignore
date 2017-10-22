@@ -2,3 +2,4 @@ node_modules
 *.key
 *.pdf
 *.doc
+.idea
