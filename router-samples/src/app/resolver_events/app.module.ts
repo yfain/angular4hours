@@ -7,14 +7,14 @@ import {HomeResComponent} from "./home.component";
 import {DataComponent} from "./data.component";
 import {DataResolver} from "./data.resolver";
 import {DataService} from "./data.service";
-import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
 import {routing} from "./app.routing";
 
-import { MdProgressBarModule } from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule,
-    MdProgressBarModule, routing],
+  imports:      [ BrowserModule, HttpClientModule,
+    MatProgressBarModule, routing],
   declarations: [ AppComponent, HomeResComponent, DataComponent],
   providers:[DataService, DataResolver,
     {provide: LocationStrategy, useClass: HashLocationStrategy}],
